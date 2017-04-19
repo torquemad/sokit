@@ -7,9 +7,11 @@ import (
 	"github.com/gorilla/websocket"
 )
 
-var clients = make(map[*websocket.Conn]bool)
-var broadcast = make(chan Message)
-var upgrader = websocket.Upgrader{}
+var (
+	clients   = make(map[*websocket.Conn]bool)
+	broadcast = make(chan Message)
+	upgrader  = websocket.Upgrader{}
+)
 
 type Message struct {
 	Email    string `json:"email"`
@@ -60,7 +62,7 @@ func handleMessages() {
 }
 
 func main() {
-	fs := http.FileServer(http.Dir("../public"))
+	fs := http.FileServer(http.Dir("."))
 
 	http.Handle("/", fs)
 	http.HandleFunc("/ws", handleConnections)
