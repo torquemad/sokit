@@ -1,0 +1,23 @@
+{
+  "name": "sokit",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack app/app.js  dist/bundle.js"
+  },
+  "main": "index.js",
+  "repository": {
+    "url": "https://gitub.com/torquemad/sokit",
+    "type": "git"
+  },
+  "author": "Louis Moore",
+  "license": "MIT",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "emojione": "^2.2.7",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
+    "materialize-css": "^0.98.2",
+    "vue": "^2.2.6",
+    "webpack": "^2.4.1"
+  }
+}
